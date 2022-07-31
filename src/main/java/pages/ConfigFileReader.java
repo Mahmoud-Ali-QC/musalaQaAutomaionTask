@@ -64,4 +64,10 @@ public class ConfigFileReader {
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
 	}
+	
+	public String getMusalaFbUrl() {
+		String url = properties.getProperty("musalaFbUrl");
+		if(url != null) return url;
+		else throw new RuntimeException("FbUrl not specified in the Configuration.properties file.");
+	}
 }

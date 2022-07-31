@@ -94,6 +94,9 @@ public class CareersPage extends PageBase {
 		clickButton(careers);
 		clickButton(joinUs);
 		joinUsUrl=driver.getCurrentUrl();
+	}
+	
+	public void filterCareersLocation() {
 		clickButton(getLocation);
 		clickButton(anyWhere);
 		clickImage(qaAutomation);

@@ -4,10 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import pages.CareersPage;
-import pages.HomePage;
-
 public class CareersTestCases extends TestBase {
-	HomePage homepage = new HomePage(driver);
 	CareersPage careersPage;
 
 	@Test
@@ -15,7 +12,8 @@ public class CareersTestCases extends TestBase {
 		SoftAssert softAssert = new SoftAssert();
 		careersPage= new CareersPage(driver);
 		careersPage.openCareersPage();
-		softAssert.assertTrue(careersPage.joinUsUrl.contains("www.musala.com/careers/join-us"));
+		System.out.print(configFileReader.getApplicationUrl()+"join-us");
+		softAssert.assertTrue(careersPage.joinUsUrl.contains(configFileReader.getApplicationUrl()+"careers/join-us"));
 		softAssert.assertTrue(careersPage.getGeneDescription);
 		softAssert.assertTrue(careersPage.getRequirements);
 		softAssert.assertTrue(careersPage.getResponsibilities);

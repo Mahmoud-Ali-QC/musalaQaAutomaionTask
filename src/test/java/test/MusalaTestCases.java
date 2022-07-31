@@ -30,10 +30,10 @@ public class MusalaTestCases extends TestBase{
 		SoftAssert softAssert = new SoftAssert();
 		companyPage= new CompanyPage(driver);
 		companyPage.openCompanyPage();
-		softAssert.assertTrue(companyPage.companyUrl.contains("www.musala.com/company"));
+		softAssert.assertTrue(companyPage.companyUrl.contains(configFileReader.getApplicationUrl()));
 		softAssert.assertTrue(companyPage.companyMembers.isDisplayed());
 		companyPage.openFacebookPage();
-		softAssert.assertTrue(companyPage.facebookUrl.contains("www.facebook.com/MusalaSoft?fref=ts"));
+		softAssert.assertTrue(companyPage.facebookUrl.contains(configFileReader.getMusalaFbUrl()));
 		softAssert.assertTrue(companyPage.musalaImage.isDisplayed());
 		softAssert.assertAll();
 	}
@@ -43,7 +43,8 @@ public class MusalaTestCases extends TestBase{
 		SoftAssert softAssert = new SoftAssert();
 		careersPage= new CareersPage(driver);
 		careersPage.openCareersPage();
-		softAssert.assertTrue(careersPage.joinUsUrl.contains("www.musala.com/careers/join-us"));
+		softAssert.assertTrue(careersPage.joinUsUrl.contains(configFileReader.getApplicationUrl()+"careers/join-us"));
+		careersPage.filterCareersLocation();
 		softAssert.assertTrue(careersPage.getGeneDescription);
 		softAssert.assertTrue(careersPage.getRequirements);
 		softAssert.assertTrue(careersPage.getResponsibilities);

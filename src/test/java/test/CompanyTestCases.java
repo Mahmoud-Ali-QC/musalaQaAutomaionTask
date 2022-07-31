@@ -16,10 +16,10 @@ public class CompanyTestCases extends TestBase {
 		SoftAssert softAssert = new SoftAssert();
 		companyPage= new CompanyPage(driver);
 		companyPage.openCompanyPage();
-		softAssert.assertTrue(companyPage.companyUrl.contains("www.musala.com/company"));
+		softAssert.assertTrue(companyPage.companyUrl.contains(configFileReader.getApplicationUrl()));
 		softAssert.assertTrue(companyPage.companyMembers.isDisplayed());
 		companyPage.openFacebookPage();
-		softAssert.assertTrue(companyPage.facebookUrl.contains("www.facebook.com/MusalaSoft?fref=ts"));
+		softAssert.assertTrue(companyPage.facebookUrl.contains(configFileReader.getMusalaFbUrl()));
 		softAssert.assertTrue(companyPage.musalaImage.isDisplayed());
 		softAssert.assertAll();
 	}
